@@ -1,3 +1,5 @@
+// This function generates a random # between 0-2
+// and uses this to return a random computer choice
 function getComputerChoice() {
 
     let compChoice = (Math.floor(Math.random() * 3));
@@ -14,6 +16,7 @@ function getComputerChoice() {
     }
 }
 
+// Allows the player to make their choice using prompt
 function getHumanChoice() {
 
     let userChoice = prompt("Choose Rock, Paper, or Scissors:");
@@ -30,9 +33,10 @@ function getHumanChoice() {
     }
 }
 
-
+// Plays the game.
 function playGame() {
 
+    // Gets human choice & computer choice and determines winner for 1 round
     function playRound() {
 
         let pc = getHumanChoice();
@@ -77,10 +81,12 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
+    // Plays 5 rounds, storing score values in variables above
     for (let i = 0; i <= 5; i++) {
         if (i < 5) {
             let round = playRound();
         }
+        // Determines final winner after 5 rounds have been played
         else if (i === 5) {
             if (humanScore > computerScore) {
                 console.log("You Win");
